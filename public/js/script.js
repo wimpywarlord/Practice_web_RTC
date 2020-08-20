@@ -31,6 +31,10 @@ var peer = new Peer(1);
 
 peer.on("open", function (id) {
 	console.log("My peer ID is: " + id);
+	var conn = peer.connect(1);
 });
 
+peer.on("connection", function (conn) {
+	console.log("SOME ONE IS TRYING TO CONNECT");
+});
 // THE PEER JS CODE
